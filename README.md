@@ -2,7 +2,10 @@
 
 ## Build & Run
 
-* This requires Maven3
+* Requirements
+    * Maven3
+    * Java8
+    * Redis ( working with localhost:6789 )
 
 ```
 $ cd spring-session-xml
