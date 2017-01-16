@@ -14,4 +14,10 @@
 	<bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
 	<!-- bean for Redis client -->
 	<bean class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory"/>
+	
+	<!-- bean for Session & Cookie settings (simply override session name) -->
+	<bean class="org.springframework.session.web.http.DefaultCookieSerializer">
+		<property name="cookieName" value="JSESSIONID-XXX" />
+		<property name="domainNamePattern" value="^.+?\\.(\\w+\\.[a-z]+)$" />		
+	</bean>
 </beans>
