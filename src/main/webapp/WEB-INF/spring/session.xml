@@ -13,7 +13,10 @@
 	<!-- activate & configure Redis settings -->
 	<bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
 	<!-- bean for Redis client -->
-	<bean class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory"/>
+	<bean class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory">
+		<constructor-arg name="host" value="#{systemEnvironment['REDIS_HOST']}" />
+		<constructor-arg name="port" value="#{systemEnvironment['REDIS_PORT']}" />
+	</bean>	
 	
 	<!-- bean for Session & Cookie settings (simply override session name) -->
 	<bean class="org.springframework.session.web.http.DefaultCookieSerializer">

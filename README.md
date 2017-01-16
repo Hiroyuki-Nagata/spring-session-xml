@@ -7,7 +7,7 @@
 ```
 $ cd spring-session-xml
 $ mvn install
-$ mvn jetty:run
+$ REDIS_HOST=localhost REDIS_PORT=6379 mvn install jetty:run
 ```
 
 ## XML setting & Tricks
